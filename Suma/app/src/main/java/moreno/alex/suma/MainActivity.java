@@ -27,18 +27,22 @@ public class MainActivity extends AppCompatActivity {
         botonSumar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Integer numero1 = Integer.parseInt((editTextValor1.getText().toString()));
-                Integer numero2 = Integer.parseInt((editTextValor2.getText().toString()));
+                //ESTO NO FUNCIONÓ
+                //Integer numero1 = Integer.parseInt((editTextValor1.getText().toString()));
+                //Integer numero2 = Integer.parseInt((editTextValor2.getText().toString()));
 
-                if (Integer.toString(numero1).isEmpty()){
+                String numero1 = editTextValor1.getText().toString();
+                String numero2 = editTextValor2.getText().toString();
+
+                if (numero1.isEmpty()){
                     mensajote("Ingresa el primer valor");
 
-                }else if (Integer.toString(numero2).isEmpty()){
+                }else if (numero2.isEmpty()){
                     mensajote("Ingresa el segundo valor");
                 }else{
                     int result;
-                    result = numero1 + numero2;
-
+                   // result = numero1 + numero2;
+                    result = Integer.parseInt(numero1) + Integer.parseInt(numero2);
                     mensajote("El resultado ez: " + result);
                 }
             }
@@ -48,3 +52,4 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show();
     }
 }
+
